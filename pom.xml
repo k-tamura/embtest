@@ -92,11 +92,20 @@
 						<phase>package</phase>
 						<configuration>
 							<path>/</path>
-							<enableNaming>false</enableNaming>
+							<enableNaming>true</enableNaming>
+							<finalName>embtest.jar</finalName>
 							<charset>utf-8</charset>
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>ROOT</warName>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -114,7 +123,7 @@
 							<executable>java</executable>
 							<arguments>
 								<argument>-jar</argument>
-								<argument>target/embtest-1-SNAPSHOT-war-exec.jar</argument>
+								<argument>target/embtest.jar</argument>
 							</arguments>
 						</configuration>
 					</execution>
