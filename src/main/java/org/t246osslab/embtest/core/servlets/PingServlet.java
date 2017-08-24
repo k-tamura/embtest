@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.owasp.esapi.ESAPI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ public class PingServlet extends HttpServlet {
         try {
             res.setContentType("text/plain");
             writer = res.getWriter();
+            writer.write(ESAPI.encoder().encodeForHTML("<test>"));
             writer.write("It works!");
         } catch (Exception e) {
             log.error("Exception occurs: ", e);

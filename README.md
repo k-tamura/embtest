@@ -6,7 +6,7 @@ This is a test web application.
 Quick Start
 -
 
-    $ mvn clean install exec:exec
+    $ mvn clean install
 
 ( or ``` java -jar embtest.jar ``` or deploy ROOT.war on your servlet container.)
 
